@@ -29,7 +29,7 @@
 		--slider_prop:  0.5625;
 		--slider_width: 90vw;
 		--slider_height: calc( var(--slider_width)*var(--slider_prop));
-		--slider_duration: 9s;
+		--slider_duration: 15s;
 	}
 
 	body {
@@ -166,12 +166,18 @@
 	#slide_3 {
 		animation-delay: 6s;
 	}
+	#slide_4 {
+		animation-delay: 9s;
+	}
+	#slide_5 {
+		animation-delay: 12s;
+	}
 	
 	@keyframes slide {
-		16.6% {
+		10% {
 			transform: translate(0px, 0px);
 		}
-		33.3% {
+		20% {
 			transform: translate(calc(-1*var(--slider_width)), 0);
 		}
 		80% {
@@ -180,7 +186,7 @@
 		81% {
 			transform: translate(var(--slider_width), var(--slider_height));
 		}
-		83.3% {
+		90% {
 			transform: translate(var(--slider_width), 0);
 		}
 	}
@@ -215,6 +221,8 @@
 	<img class=slide id=slide_1 src="img/slider/slider_01.png">
 	<img class=slide id=slide_2 src="img/slider/slider_02.png">
 	<img class=slide id=slide_3 src="img/slider/slider_03.png">
+	<img class=slide id=slide_4 src="img/slider/slider_04.png">
+	<img class=slide id=slide_5 src="img/slider/slider_05.png">
 </div>
 
 <main>
