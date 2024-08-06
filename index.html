@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0" />
+	<style>
+	@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Honk&family=Kalnia+Glaze:wght@100..700&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&family=Playwrite+CZ:wght@100..400&display=swap');
+	h1 {
+		font-family: "Kalnia Glaze", serif;
+		font-size: 48px;
+	}
+	h2 {
+		font-family: "Honk", system-ui;
+		
+	}
+	p {
+		font-family: "Playwrite AT", cursive;
+	}
+	a {
+		font-family: "Ga Maamli", cursive;
+	}
+
+	:root {
+		--img_prop_mobile: 0.5625;
+		--img_width_mobile: 90vw;
+		--img_height_mobile: calc( var(--img_width_mobile)*var(--img_prop_mobile));
+		--img_size_pc: 20vw;
+		--img_margin: 3%;
+		
+		--slider_prop:  0.5625;
+		--slider_width: 90vw;
+		--slider_height: calc( var(--slider_width)*var(--slider_prop));
+		--slider_duration: 9s;
+	}
+
+	body {
+		width: 90vw;
+		margin: 0 auto;
+		background-image: url("img/back.png");
+	}
+	
+	nav>div{
+		display: flex;
+	}
+	
+	nav img{
+		width: 30vw;
+	}
+	
+	article {
+		margin-top: 15%;
+	}
+	
+	section {
+		display: flex;
+		align-items: center;
+		justify-content: center;	
+	}
+		
+	picture>img {
+		border-radius: 16px;
+		display: block;
+	}
+	
+	@media (max-width: 769px) {
+		section {
+			flex-direction: column;
+		}
+		
+		picture>img {
+			width: var(--img_width_mobile);
+			height: var(--img_height_mobile);
+		}
+		
+
+	}
+	
+	@media (min-width: 769px) {
+		picture>img {
+			width: var(--img_size_pc);
+			height: var(--img_size_pc);
+		}
+				
+		picture {
+			margin-right: var(--img_margin);
+		}
+		
+		.inverse {
+			flex-direction: row-reverse;
+		}
+		
+		.inverse picture {
+			margin-right: 0;
+			margin-left: var(--img_margin);
+		}
+	
+	}
+	
+	a {
+		text-decoration: none;
+	}
+	
+	h1, h2, .up, #article_4 {
+		text-align: center;
+	}
+	
+	p {
+		text-align: justify;
+	}
+	
+	iframe {
+		display: block;
+		width: 80vw;
+		aspect-ratio: 16 / 9;
+		margin: 3% auto;
+	}
+	
+	address {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	address>a {
+		display: flex;
+		align-items: center;
+	}
+	
+	input {
+		display: none;
+	}
+	
+	label img {
+		width: 24vw;
+		border-radius: 16px;
+	}
+	
+	input:checked~*{
+		width: 76vw;
+	}
+
+	.slider {
+		width: var(--slider_width);
+		height: var(--slider_height);
+		position: relative;
+		overflow: hidden;
+		border-radius: 16px;
+	}
+	
+	.slide {
+		width: var(--slider_width);
+		height: var(--slider_height);
+		position: absolute;
+		top: 0;
+		left: 0;
+		animation-name: slide;
+		animation-duration: var(--slider_duration);
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+	
+	#slide_1 {
+		animation-delay: 0s;
+	}
+	#slide_2 {
+		animation-delay: 3s;
+	}
+	#slide_3 {
+		animation-delay: 6s;
+	}
+	
+	@keyframes slide {
+		16.6% {
+			transform: translate(0px, 0px);
+		}
+		33.3% {
+			transform: translate(calc(-1*var(--slider_width)), 0);
+		}
+		80% {
+			transform: translate(calc(-1*var(--slider_width)), var(--slider_height));
+		}
+		81% {
+			transform: translate(var(--slider_width), var(--slider_height));
+		}
+		83.3% {
+			transform: translate(var(--slider_width), 0);
+		}
+	}
+	</style>
+</head>
+<body>
+
+<nav>
+	<div>
+		<a href="#article_1">
+			<img src="img/menu/1.png">
+		</a>
+		<img src="img/menu/logo.png">
+		<a href="#article_2">
+			<img src="img/menu/2.png">
+		</a>
+	</div>
+	<div>
+		<a href="#article_3">
+			<img src="img/menu/3.png">
+		</a>
+		<a href="#article_4">
+			<img src="img/menu/4.png">
+		</a>
+		<a href="#article_5">
+			<img src="img/menu/5.png">
+		</a>
+	</div>
+</nav>
+
+<div class=slider>
+	<img class=slide id=slide_1 src="img/slider/slider_01.png">
+	<img class=slide id=slide_2 src="img/slider/slider_02.png">
+	<img class=slide id=slide_3 src="img/slider/slider_03.png">
+</div>
+
+<main>
+	<article id="article_1">
+		<h1>À propos</h1>
+		<section>
+			<picture>
+				<source srcset="img/block/block_TEST_pc.png" media="(min-width: 769px)" >
+				<img src="img/block/block_TEST_mobile.png">
+			</picture>
+			<div>
+				<h2>Laissez votre imagination prendre le contrôle !</h2>
+				<p>Dés’n’Dés est un club de jeu de rôle, un jeu ludique, où l’imagination prend vie, où les histoires et légendes règnent et où l’aventure n’a pas d’autres limites que celles que nous nous fixons. Notre association a été créée en 2016 dans le but de réunir des personnes partageant la même passion pour le jeu de rôle, quelque soit leur niveau d’expérience. Que vous soyez un explorateur chevronné ou un novice curieux de ce passionnant loisir, bienvenue parmi nous !</p>
+			</div>
+		</section>
+		<iframe src="https://www.youtube.com/embed/EZeMgTs4ZdU?si=90UY-s1DIbVar2q2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		<div class=up>
+			<a href="">En haut</a>
+		<div>
+	</article>
+
+	<article id="article_2">
+		<h1>Notre mission</h1>
+		<section class=inverse>
+			<picture>
+				<source srcset="img/block/block_TEST_pc.png" media="(min-width: 769px)" >
+				<img src="img/block/block_TEST_mobile.png">
+			</picture>
+			<div>
+				<p>Notre mission principale est de créer un espace au sein de Sorbonne Université où les amateurs de jeu de rôle (qu’ils soient étudiants et professionnels de l’université ou d’ailleurs) peuvent se rencontrer, échanger des idées, partager leurs expériences et surtout jouer ensemble. Pour ce faire, nous organisons régulièrement des parties de jeux ! Si cela vous intéresse, rejoignez-nous pour vivre des aventures inoubliables, créer des souvenirs durables et développer des amitiés qui perdureront au-delà des frontières du jeu de rôle. Nous vous proposons de vous lancer à la découverte de nos univers variés et de vous immerger dans la diversité des mondes fantastiques : Donjons & Dragons, Pathfinder, l’Appel de Cthulhu, Warhammer 40k, Cyberpunk, Alien, Coriolis, Ryuutama et tant d’autres…</p>
+			</div>
+		</section>
+		<div class=up>
+			<a href="">En haut</a>
+		<div>
+	</article>
+	
+	<article id="article_3">
+		<h1>Activités proposées</h1>
+		<p>Au sein de notre association, nous organisons une variété d’activités pour satisfaire tous les goûts</p>
+		<section>
+			<picture>
+				<source srcset="img/block/block_TEST_pc.png" media="(min-width: 769px)" >
+				<img src="img/block/block_TEST_mobile.png">
+			</picture>
+			<div>
+				<h2>1. Jouer aux jeux de rôle</h2>
+				<p>Plongez dans des mondes épiques, explorez des univers fantastiques et vivez des aventures étonnantes lors de nos séances de jeu de rôle régulières et multiples - de longue durée (sur un ou deux semestres) ou one-shots (sur quelques heures seulement). Nos maîtres du jeu sont là pour vous guider à travers leurs récits captivants et s’adaptent à vos disponibilités ainsi qu’à vos besoins.</p>
+				<p>Voir les campagnes et one-shots proposés et s’inscrire:
+					<a href="https://docs.google.com/spreadsheets/d/1kmUVcuTfxi6zCGO2O7BZjgUAFR_oc_EOQhZct8P3Ao8/edit?usp=sharing">voir nos tables de jeu</a>
+				</p>
+			</div>
+		</section>
+		<section class=inverse>
+			<picture>
+				<source srcset="img/block/block_TEST_pc.png" media="(min-width: 769px)" >
+				<img src="img/block/block_TEST_mobile.png">
+			</picture>
+			<div>
+				<h2>2. Ateliers créatifs</h2>
+				<p>Que vous soyez intéressé.e.s par la création des scénarios, la conception de personnages, le dessin de cartes, la peinture des miniatures ou tout autre aspect artistique lié au jeu de rôle, nos ateliers créatifs vous offrent l’opportunité de développer vos compétences et de partager votre passion.</p>
+			</div>
+		</section>
+				<section>
+			<picture>
+				<source srcset="img/block/block_TEST_pc.png" media="(min-width: 769px)" >
+				<img src="img/block/block_TEST_mobile.png">
+			</picture>
+			<div>
+				<h2>3. Evènements thématiques</h2>
+				<p>De soirées jeux aux one-shots de jeu de rôle ouverts à tous, nous organisons des événements thématiques ponctuels pour ajouter une touche spéciale à notre communauté et renforcer les liens entre nos membres. Parmi les thématiques festives déjà exploités : Halloween, Nouvel An, Stranger Things, Fête du Printemps, Journée d’Antiquité, Loup Garou, Journée Seigneur des Anneaux, Journée Game of Thrones…</p>
+			</div>
+		</section>
+		<section class=inverse>
+			<picture>
+				<source srcset="img/block/block_TEST_pc.png" media="(min-width: 769px)" >
+				<img src="img/block/block_TEST_mobile.png">
+			</picture>
+			<div>
+				<h2>4. Sessions d’initiation</h2>
+				<p>Si vous êtes nouveau dans le monde du jeu de rôle, ne vous inquiétez pas ! Nous proposons des sessions d’initiation pour vous aider à vous familiariser avec les règles et à vous intégrer rapidement au sein de notre association.</p>
+			</div>
+		</section>
+		<div class=up>
+			<a href="">En haut</a>
+		<div>
+	</article>
+	
+	<article id="article_4">
+		<details>
+			<summary>
+				<h1 style="display: inline;">Photo-galerie</h1>
+			</summary>
+			<label>
+				<input type="checkbox">
+				<img src="img/gallery/gallery_test.png">
+			</label>
+			<label>
+				<input type="checkbox">
+				<img src="img/gallery/gallery_test.png">
+			</label>
+			<label>
+				<input type="checkbox">
+				<img src="img/gallery/gallery_test.png">
+			</label>
+			<label>
+				<input type="checkbox">
+				<img src="img/gallery/gallery_test.png">
+			</label>
+			<label>
+				<input type="checkbox">
+				<img src="img/gallery/gallery_test.png">
+			</label>
+			<label>
+				<input type="checkbox">
+				<img src="img/gallery/gallery_test.png">
+			</label>
+			<label>
+				<input type="checkbox">
+				<img src="img/gallery/gallery_test.png">
+			</label>
+			<label>
+				<input type="checkbox">
+				<img src="img/gallery/gallery_test.png">
+			</label>
+			<label>
+				<input type="checkbox">
+				<img src="img/gallery/gallery_test.png">
+			</label>
+			<label>
+				<input type="checkbox">
+				<img src="img/gallery/gallery_test.png">
+			</label>
+		</details>
+		<div class=up>
+			<a href="">En haut</a>
+		<div>
+	</article>
+	
+	<article id="article_5">
+		<h1>Nous contacter</h1>
+		<address>
+			<a href="https://www.instagram.com/des_n_des_su/">
+				<img src="img/contact/TEST.png">
+				Instagram
+			</a>
+			<a href="https://discord.com/invite/s5n7evcZ5r">
+				<img src="img/contact/TEST.png">
+				Discord
+			</a>
+			<a href="https://www.helloasso.com/associations/des-n-des/adhesions/adhesion-en-ligne-a-des-n-des">
+				<img src="img/contact/TEST.png">
+				Adhérer (HelloAsso)
+			</a>
+			<a href="mailto:des.n.des.upmc@gmail.com">
+				<img src="img/contact/TEST.png">
+				Mail
+			</a>
+		</address>
+	</article>
+</main>
+
+</body>
+</html>
+
