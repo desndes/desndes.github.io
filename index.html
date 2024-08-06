@@ -18,25 +18,42 @@
 	a {
 		font-family: "Ga Maamli", cursive;
 	}
-
+	
 	:root {
 		--img_prop_mobile: 0.5625;
 		--img_width_mobile: 90vw;
 		--img_height_mobile: calc( var(--img_width_mobile)*var(--img_prop_mobile));
-		--img_size_pc: 20vw;
+		--img_size_pc: 25vw;
 		--img_margin: 3%;
 		
 		--slider_prop:  0.5625;
 		--slider_width: 90vw;
 		--slider_height: calc( var(--slider_width)*var(--slider_prop));
 		--slider_duration: 15s;
+		
+		--slider_duration_block: 6s;
+		--slider_block_prop:  0.5625;
 	}
 
 	body {
 		width: 90vw;
 		margin: 0 auto;
-		background-image: url("img/back.png");
+		<!-- background-image: url("img/back.png"); -->
 	}
+	
+	nav, body {
+		background-color: rgb(92,138,154);
+	}
+	
+	#article_1, #article_3 {
+		background-color: rgb(163,182,95);
+	}
+
+	#article_2, #article_4, #article_5 {
+		background-color: rgb(227,211,152);
+	}
+	
+
 	
 	nav>div{
 		display: flex;
@@ -61,6 +78,9 @@
 		display: block;
 	}
 	
+	
+
+	
 	@media (max-width: 769px) {
 		section {
 			flex-direction: column;
@@ -71,6 +91,10 @@
 			height: var(--img_height_mobile);
 		}
 		
+		:root {
+			--slider_width_block: 90vw;
+			--slider_height_block: calc( var(--slider_width_block)*var(--slider_block_prop));
+		}
 
 	}
 	
@@ -93,6 +117,57 @@
 			margin-left: var(--img_margin);
 		}
 	
+		:root {
+			--slider_width_block: var(--img_size_pc);
+			--slider_height_block: var(--img_size_pc);
+		}
+	
+	}
+
+	#slider_block {
+		margin-right: var(--img_margin);
+	}
+	
+	#slider_block img {
+		border-radius: 0;
+	}
+	
+	.slider_block {
+		width: var(--slider_width_block);
+		height: var(--slider_height_block);
+		position: relative;
+		overflow: hidden;
+		border-radius: 16px;
+	}
+	
+	.slide_block {
+		width: var(--slider_width_block);
+		height: var(--slider_height_block);
+		position: absolute;
+		top: 0;
+		left: 0;
+		animation-name: slide_block;
+		animation-duration: var(--slider_duration_block);
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+	
+	@keyframes slide_block{
+		25% {
+			transform: translate(0px, 0px);
+		}
+		50% {
+			transform: translate(calc(-1*var(--slider_width_block)), 0);
+		}
+		60% {
+			transform: translate(calc(-1*var(--slider_width)), var(--slider_height_block));
+		}
+		61% {
+			transform: translate(var(--slider_width_block), var(--slider_height_block));
+		}
+		75% {
+			transform: translate(var(--slider_width_block), 0);
+		}
 	}
 	
 	a {
@@ -122,6 +197,10 @@
 	address>a {
 		display: flex;
 		align-items: center;
+	}
+	
+	address img {
+		width: 5vw;
 	}
 	
 	input {
@@ -190,6 +269,10 @@
 			transform: translate(var(--slider_width), 0);
 		}
 	}
+	
+	details {
+			display: flex;
+	}
 	</style>
 </head>
 <body>
@@ -230,8 +313,8 @@
 		<h1>À propos</h1>
 		<section>
 			<picture>
-				<source srcset="img/block/block_1_pc.png" media="(min-width: 769px)" >
-				<img src="img/block/block_TEST_mobile.png">
+				<source srcset="img/block/block_1_mobile.png" media="(min-width: 769px)" >
+				<img src="img/block/block_1_pc.png">
 			</picture>
 			<div>
 				<h2>Laissez votre imagination prendre le contrôle !</h2>
@@ -241,7 +324,7 @@
 		<iframe src="https://www.youtube.com/embed/EZeMgTs4ZdU?si=90UY-s1DIbVar2q2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 		<div class=up>
 			<a href="">En haut</a>
-		<div>
+		</div>
 	</article>
 
 	<article id="article_2">
@@ -249,7 +332,7 @@
 		<section class=inverse>
 			<picture>
 				<source srcset="img/block/block_2_pc.png" media="(min-width: 769px)" >
-				<img src="img/block/block_TEST_mobile.png">
+				<img src="img/block/block_2_mobile.png">
 			</picture>
 			<div>
 				<p>Notre mission principale est de créer un espace au sein de Sorbonne Université où les amateurs de jeu de rôle (qu’ils soient étudiants et professionnels de l’université ou d’ailleurs) peuvent se rencontrer, échanger des idées, partager leurs expériences et surtout jouer ensemble. Pour ce faire, nous organisons régulièrement des parties de jeux ! Si cela vous intéresse, rejoignez-nous pour vivre des aventures inoubliables, créer des souvenirs durables et développer des amitiés qui perdureront au-delà des frontières du jeu de rôle. Nous vous proposons de vous lancer à la découverte de nos univers variés et de vous immerger dans la diversité des mondes fantastiques : Donjons & Dragons, Pathfinder, l’Appel de Cthulhu, Warhammer 40k, Cyberpunk, Alien, Coriolis, Ryuutama et tant d’autres…</p>
@@ -257,7 +340,7 @@
 		</section>
 		<div class=up>
 			<a href="">En haut</a>
-		<div>
+		</div>
 	</article>
 	
 	<article id="article_3">
@@ -266,7 +349,7 @@
 		<section>
 			<picture>
 				<source srcset="img/block/block_3_1_pc.png" media="(min-width: 769px)" >
-				<img src="img/block/block_TEST_mobile.png">
+				<img src="img/block/block_3_1_mobile.png">
 			</picture>
 			<div>
 				<h2>1. Jouer aux jeux de rôle</h2>
@@ -279,18 +362,26 @@
 		<section class=inverse>
 			<picture>
 				<source srcset="img/block/block_3_2_pc.png" media="(min-width: 769px)" >
-				<img src="img/block/block_TEST_mobile.png">
+				<img src="img/block/block_3_2_mobile.png">
 			</picture>
 			<div>
 				<h2>2. Ateliers créatifs</h2>
 				<p>Que vous soyez intéressé.e.s par la création des scénarios, la conception de personnages, le dessin de cartes, la peinture des miniatures ou tout autre aspect artistique lié au jeu de rôle, nos ateliers créatifs vous offrent l’opportunité de développer vos compétences et de partager votre passion.</p>
 			</div>
 		</section>
-				<section>
-			<picture>
-				<source srcset="img/block/block_TEST_pc.png" media="(min-width: 769px)" >
-				<img src="img/block/block_TEST_mobile.png">
-			</picture>
+		<section>
+			<div id=slider_block>
+				<div class=slider_block>
+					<picture>
+						<source  class=slide_block id=slide_1 srcset="img/block/block_3_3_1_pc.png" media="(min-width: 769px)" >
+						<img class=slide_block id=slide_1 src="img/block/block_3_3_1_mobile.png">
+					</picture>
+					<picture>
+						<source  class=slide_block id=slide_2 srcset="img/block/block_3_3_2_pc.png" media="(min-width: 769px)" >
+						<img class=slide_block id=slide_2 src="img/block/block_3_3_2_mobile.png">
+					</picture>
+				</div>
+			</div>
 			<div>
 				<h2>3. Evènements thématiques</h2>
 				<p>De soirées jeux aux one-shots de jeu de rôle ouverts à tous, nous organisons des événements thématiques ponctuels pour ajouter une touche spéciale à notre communauté et renforcer les liens entre nos membres. Parmi les thématiques festives déjà exploités : Halloween, Nouvel An, Stranger Things, Fête du Printemps, Journée d’Antiquité, Loup Garou, Journée Seigneur des Anneaux, Journée Game of Thrones…</p>
@@ -299,7 +390,7 @@
 		<section class=inverse>
 			<picture>
 				<source srcset="img/block/block_3_4_pc.png" media="(min-width: 769px)" >
-				<img src="img/block/block_TEST_mobile.png">
+				<img src="img/block/block_3_4_mobile.png">
 			</picture>
 			<div>
 				<h2>4. Sessions d’initiation</h2>
@@ -308,7 +399,7 @@
 		</section>
 		<div class=up>
 			<a href="">En haut</a>
-		<div>
+		</div>
 	</article>
 	
 	<article id="article_4">
@@ -318,68 +409,89 @@
 			</summary>
 			<label>
 				<input type="checkbox">
-				<img src="img/gallery/gallery_test.png">
+				<img src="img/gallery/01.jpg">
 			</label>
 			<label>
 				<input type="checkbox">
-				<img src="img/gallery/gallery_test.png">
+				<img src="img/gallery/02.jpg">
 			</label>
 			<label>
 				<input type="checkbox">
-				<img src="img/gallery/gallery_test.png">
+				<img src="img/gallery/03.jpg">
 			</label>
 			<label>
 				<input type="checkbox">
-				<img src="img/gallery/gallery_test.png">
+				<img src="img/gallery/04.jpg">
 			</label>
 			<label>
 				<input type="checkbox">
-				<img src="img/gallery/gallery_test.png">
+				<img src="img/gallery/05.jpg">
 			</label>
 			<label>
 				<input type="checkbox">
-				<img src="img/gallery/gallery_test.png">
+				<img src="img/gallery/06.jpg">
 			</label>
 			<label>
 				<input type="checkbox">
-				<img src="img/gallery/gallery_test.png">
+				<img src="img/gallery/07.jpg">
 			</label>
 			<label>
 				<input type="checkbox">
-				<img src="img/gallery/gallery_test.png">
+				<img src="img/gallery/08.jpg">
 			</label>
 			<label>
 				<input type="checkbox">
-				<img src="img/gallery/gallery_test.png">
+				<img src="img/gallery/09.jpg">
 			</label>
 			<label>
 				<input type="checkbox">
-				<img src="img/gallery/gallery_test.png">
+				<img src="img/gallery/10.jpg">
 			</label>
+			<label>
+				<input type="checkbox">
+				<img src="img/gallery/11.jpg">
+			</label>
+			<label>
+				<input type="checkbox">
+				<img src="img/gallery/12.jpg">
+			</label>
+			<label>
+				<input type="checkbox">
+				<img src="img/gallery/13.jpg">
+			</label>
+			<label>
+				<input type="checkbox">
+				<img src="img/gallery/14.jpg">
+			</label>
+			<label>
+				<input type="checkbox">
+				<img src="img/gallery/15.jpg">
+			</label>
+
 		</details>
 		<div class=up>
 			<a href="">En haut</a>
-		<div>
+		</div>
 	</article>
 	
 	<article id="article_5">
 		<h1>Nous contacter</h1>
 		<address>
-			<a href="https://www.instagram.com/des_n_des_su/">
-				<img src="img/contact/TEST.png">
-				Instagram
+			<a href="mailto:des.n.des.upmc@gmail.com">
+				<img src="img/contact/mail.png">
+				Mail
 			</a>
 			<a href="https://discord.com/invite/s5n7evcZ5r">
-				<img src="img/contact/TEST.png">
+				<img src="img/contact/discord.png">
 				Discord
 			</a>
-			<a href="https://www.helloasso.com/associations/des-n-des/adhesions/adhesion-en-ligne-a-des-n-des">
-				<img src="img/contact/TEST.png">
-				Adhérer (HelloAsso)
+			<a href="https://www.instagram.com/des_n_des_su/">
+				<img src="img/contact/instagram.png">
+				Instagram
 			</a>
-			<a href="mailto:des.n.des.upmc@gmail.com">
-				<img src="img/contact/TEST.png">
-				Mail
+			<a href="https://www.helloasso.com/associations/des-n-des/adhesions/adhesion-en-ligne-a-des-n-des">
+				<img src="img/contact/helloasso.png">
+				Adhérer (HelloAsso)
 			</a>
 		</address>
 	</article>
