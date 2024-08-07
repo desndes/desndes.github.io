@@ -21,7 +21,7 @@
 	
 	:root {
 		--img_prop_mobile: 0.5625;
-		--img_width_mobile: 90vw;
+		--img_width_mobile: calc(90vw - 20vw);
 		--img_height_mobile: calc( var(--img_width_mobile)*var(--img_prop_mobile));
 		--img_size_pc: 25vw;
 		--img_margin: 3%;
@@ -72,13 +72,17 @@
 	article {
 		margin-top: 15%;
 		border-radius: 16px;
+		border-image-source: url("img/border.png");
+		border-image-slice: 640;
+		border-image-repeat: repeat;
+		border-width: 10vw;
+		border-style: solid;
 	}
 	
 	section {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin: auto 5vw;
 	}
 		
 	picture>img {
@@ -97,7 +101,7 @@
 		}
 		
 		:root {
-			--slider_width_block: 90vw;
+			--slider_width_block: var(--img_width_mobile);
 			--slider_height_block: calc( var(--slider_width_block)*var(--slider_block_prop));
 		}
 
@@ -189,9 +193,10 @@
 	
 	iframe {
 		display: block;
-		width: 80vw;
+		width: var(--img_width_mobile);
 		aspect-ratio: 16 / 9;
-		margin: 3% auto;
+
+		border-radius: 16px;
 	}
 	
 	address {
@@ -214,7 +219,7 @@
 	}
 	
 	label img {
-		width: 24vw;
+		width: 20vw;
 		border-radius: 16px;
 	}
 	
