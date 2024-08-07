@@ -69,9 +69,12 @@
 		transform: scale(1.2);
 	}
 	
+	article, picture>img, .slider, .slider_block, iframe, label img {
+		border-radius: 16px;
+	}
+	
 	article {
 		margin-top: 15%;
-		border-radius: 16px;
 		border-image-source: url("img/border.png");
 		border-image-slice: 600;
 		border-image-repeat: repeat;
@@ -86,7 +89,6 @@
 	}
 		
 	picture>img {
-		border-radius: 16px;
 		display: block;
 	}
 
@@ -146,7 +148,6 @@
 		height: var(--slider_height_block);
 		position: relative;
 		overflow: hidden;
-		border-radius: 16px;
 	}
 	
 	.slide_block {
@@ -195,8 +196,6 @@
 		display: block;
 		width: var(--img_width_mobile);
 		aspect-ratio: 16 / 9;
-
-		border-radius: 16px;
 	}
 	
 	address {
@@ -220,11 +219,10 @@
 	
 	label img {
 		width: 20vw;
-		border-radius: 16px;
 	}
 	
 	input:checked~*{
-		width: 76vw;
+		width: var(--img_width_mobile);
 	}
 
 	.slider {
@@ -232,7 +230,6 @@
 		height: var(--slider_height);
 		position: relative;
 		overflow: hidden;
-		border-radius: 16px;
 	}
 	
 	.slide {
