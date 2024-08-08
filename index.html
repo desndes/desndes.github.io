@@ -6,7 +6,7 @@
 	@import url('https://fonts.googleapis.com/css2?family=Langar&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 	h1 {
 		font-family: "Langar", system-ui;
-		font-size: 70px;
+		font-size: 10vw;
 	}
 	h2 {
 		font-family: "Raleway", serif;
@@ -100,10 +100,11 @@
 
 	nav>div{
 		display: flex;
+		flex-basis: 50%;
 	}
 	
 	nav img{
-		width: 30vw;
+		width: 27vw;
 	}
 	
 	nav>div>img {
@@ -155,7 +156,6 @@
 			--slider_width_block: var(--img_width_mobile);
 			--slider_height_block: calc( var(--slider_width_block)*var(--slider_block_prop));
 		}
-
 	}
 	
 	@media (min-width: 769px) {
@@ -181,7 +181,6 @@
 			--slider_width_block: var(--img_size_pc);
 			--slider_height_block: var(--img_size_pc);
 		}
-	
 	}
 
 	#slider_block {
@@ -251,13 +250,14 @@
 	address {
 		display: flex;
 		justify-content: center;
+		flex-wrap: wrap;
 	}
 	
 	address>a {
 		display: flex;
 		align-items: center;
 		flex-direction: column;
-		flex-basis: 100%;
+		<!-- flex-basis: 100%; -->
 	}
 	
 	address img {
@@ -412,7 +412,7 @@
 				<p>Voir les campagnes et one-shots proposés et s’inscrire:</p>
 				<p>
 					<a href="https://docs.google.com/spreadsheets/d/1kmUVcuTfxi6zCGO2O7BZjgUAFR_oc_EOQhZct8P3Ao8/edit?usp=sharing">VOIR NOS TABLES DE JEU</a>
-				<p>
+				</p>
 			</div>
 		</section>
 		<section class=inverse>
@@ -544,10 +544,6 @@
 	<article id="article_5">
 		<h1>Nous contacter</h1>
 		<address>
-			<a href="mailto:des.n.des.upmc@gmail.com">
-				<img src="img/contact/mail.png">
-				des.n.des.upmc@gmail.com
-			</a>
 			<a href="https://discord.com/invite/s5n7evcZ5r">
 				<img src="img/contact/discord.png">
 				Discord
@@ -559,6 +555,10 @@
 			<a href="https://www.helloasso.com/associations/des-n-des/adhesions/adhesion-en-ligne-a-des-n-des">
 				<img src="img/contact/helloasso.png">
 				Adhérer
+			</a>
+			<a href="mailto:des.n.des.upmc@gmail.com">
+				<img src="img/contact/mail.png">
+				des.n.des.upmc@gmail.com
 			</a>
 		</address>
 	</article>
