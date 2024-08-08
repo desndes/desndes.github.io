@@ -253,11 +253,16 @@
 		flex-wrap: wrap;
 	}
 	
-	address>a {
+	address>div {
+		display: flex;
+
+		
+	}
+	
+	address a {
 		display: flex;
 		align-items: center;
 		flex-direction: column;
-		<!-- flex-basis: 100%; -->
 	}
 	
 	address img {
@@ -544,18 +549,20 @@
 	<article id="article_5">
 		<h1>Nous contacter</h1>
 		<address>
-			<a href="https://discord.com/invite/s5n7evcZ5r">
-				<img src="img/contact/discord.png">
-				Discord
-			</a>
-			<a href="https://www.instagram.com/des_n_des_su/">
-				<img src="img/contact/instagram.png">
-				Instagram
-			</a>
-			<a href="https://www.helloasso.com/associations/des-n-des/adhesions/adhesion-en-ligne-a-des-n-des">
-				<img src="img/contact/helloasso.png">
-				Adhérer
-			</a>
+			<div>
+				<a href="https://discord.com/invite/s5n7evcZ5r">
+					<img src="img/contact/discord.png">
+					Discord
+				</a>
+				<a href="https://www.instagram.com/des_n_des_su/">
+					<img src="img/contact/instagram.png">
+					Instagram
+				</a>
+				<a href="https://www.helloasso.com/associations/des-n-des/adhesions/adhesion-en-ligne-a-des-n-des">
+					<img src="img/contact/helloasso.png">
+					Adhérer
+				</a>
+			</div>
 			<a href="mailto:des.n.des.upmc@gmail.com">
 				<img src="img/contact/mail.png">
 				des.n.des.upmc@gmail.com
