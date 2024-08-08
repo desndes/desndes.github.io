@@ -6,16 +6,26 @@
 	@import url('https://fonts.googleapis.com/css2?family=Langar&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 	h1 {
 		font-family: "Langar", system-ui;
-		font-size: 48px;
+		font-size: 70px;
 	}
 	h2 {
 		font-family: "Raleway", serif;
+		text-decoration: underline;
 	}
 	p {
 		font-family: "Merriweather", serif;
 	}
 	a {
 		font-family: "Roboto", sans-serif;
+		font-size: 18px;
+	}
+	
+	a:link, a:visited {
+		color: #5c0041;
+	}
+	
+	address>a {
+		<!-- font-size: 24px; -->
 	}
 	
 	:root {
@@ -69,6 +79,23 @@
 	#article_5 {
 		background-color:var(--color_block_5);
 		border-image-source: url("img/border_3.png");
+	}
+
+	a {
+		padding: 10px;
+		border-radius: 16px;
+	}
+
+	.up {
+		margin: 10px;
+	}
+
+	#article_1 a, #article_3 a {
+		background-color: #859d4b;
+	}
+	
+	#article_2 a, #article_4 a {
+		background-color: #eecb77;
 	}
 
 	nav>div{
@@ -202,7 +229,7 @@
 		text-decoration: none;
 	}
 	
-	h1, h2, .up, #article_4 {
+	h1, h2, .up, #article_4, #article_3>p {
 		text-align: center;
 	}
 	
@@ -214,12 +241,13 @@
 		display: block;
 		width: var(--img_width_mobile);
 		aspect-ratio: 16 / 9;
-		margin-top: 2vw;
+		margin: 2vw auto;
 	}
 	
 	address {
 		display: flex;
 		justify-content: center;
+		margin: 10vw;
 	}
 	
 	address>a {
@@ -378,9 +406,10 @@
 			<div>
 				<h2>1. Jouer aux jeux de rôle</h2>
 				<p>Plongez dans des mondes épiques, explorez des univers fantastiques et vivez des aventures étonnantes lors de nos séances de jeu de rôle régulières et multiples - de longue durée (sur un ou deux semestres) ou one-shots (sur quelques heures seulement). Nos maîtres du jeu sont là pour vous guider à travers leurs récits captivants et s’adaptent à vos disponibilités ainsi qu’à vos besoins.</p>
-				<p>Voir les campagnes et one-shots proposés et s’inscrire:
-					<a href="https://docs.google.com/spreadsheets/d/1kmUVcuTfxi6zCGO2O7BZjgUAFR_oc_EOQhZct8P3Ao8/edit?usp=sharing">voir nos tables de jeu</a>
-				</p>
+				<p>Voir les campagnes et one-shots proposés et s’inscrire:</p>
+				<p>
+					<a href="https://docs.google.com/spreadsheets/d/1kmUVcuTfxi6zCGO2O7BZjgUAFR_oc_EOQhZct8P3Ao8/edit?usp=sharing">VOIR NOS TABLES DE JEU</a>
+				<p>
 			</div>
 		</section>
 		<section class=inverse>
@@ -427,7 +456,7 @@
 	</article>
 	
 	<article id="article_4">
-		<details>
+		<details open>
 			<summary>
 				<h1 style="display: inline;">Photo-galerie</h1>
 			</summary>
