@@ -6,14 +6,16 @@
 	@import url('https://fonts.googleapis.com/css2?family=Langar&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 	h1 {
 		font-family: "Langar", system-ui;
-		font-size: 10vw;
+		font-size: 5vw;
 	}
 	h2 {
 		font-family: "Raleway", serif;
 		text-decoration: underline;
+		font-size: 3vw;
 	}
 	p {
 		font-family: "Merriweather", serif;
+		font-size: 2vw;
 	}
 	a {
 		font-family: "Roboto", sans-serif;
@@ -49,6 +51,10 @@
 		--color_block_3:  #cdda95;
 		--color_block_4:  #f6ecc4;
 		--color_block_5:  #7cc4f8;
+		
+		--color_counter_1: #00000000;
+		--color_counter_2: white;
+		--counter_size: 1.5vw;
 	}
 
 	body {
@@ -289,6 +295,9 @@
 		height: var(--slider_height);
 		position: relative;
 		overflow: hidden;
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: center;
 	}
 	
 	.slide {
@@ -336,6 +345,58 @@
 			transform: translate(var(--slider_width), 0);
 		}
 	}
+	
+	
+	#counter {
+		display: flex;
+		align-items: flex-end;
+	}
+	
+	.circle_counter{
+		width: var(--counter_size);
+		height: var(--counter_size);
+		border-radius: 50%;
+		background: var(--color_counter_1);
+		z-index: 1;
+		border-color: var(--color_counter_2);
+		border-width: 0.2vw;
+		border-style: solid;
+		margin: 0.5vw;
+		
+		animation-name: change_counter;
+		animation-duration: var(--slider_duration);
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+	
+	@keyframes change_counter {
+		0% {
+			background: var(--color_counter_1);
+		}
+		10% {
+			background: var(--color_counter_2);
+		}
+		20% {
+			background: var(--color_counter_1);
+		}
+	}
+	
+	#counter_1 {
+		animation-delay: 14s;
+	}
+	#counter_2 {
+		animation-delay: 17s;
+	}
+	#counter_3 {
+		animation-delay: 20s;
+	}
+	#counter_4 {
+		animation-delay: 23s;
+	}
+	#counter_5 {
+		animation-delay: 26s;
+	}
+	
 	</style>
 </head>
 <body>
@@ -369,7 +430,16 @@
 	<img class=slide id=slide_3 src="img/slider/slider_03.png">
 	<img class=slide id=slide_4 src="img/slider/slider_04.png">
 	<img class=slide id=slide_5 src="img/slider/slider_05.png">
+	<div id=counter>
+		<div class=circle_counter id=counter_1></div>
+		<div class=circle_counter id=counter_2></div>
+		<div class=circle_counter id=counter_3></div>
+		<div class=circle_counter id=counter_4></div>
+		<div class=circle_counter id=counter_5></div>
+	</div>
 </div>
+
+
 
 <main>
 	<article id="article_1">
